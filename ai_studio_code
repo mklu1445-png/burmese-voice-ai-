@@ -1,0 +1,22 @@
+[ Frontend PWA (iPhone / Android / Web) ]
+                │
+                ▼ (POST /api/generate-voice with Burmese text & parameters)
+┌───────────────────────────────────────────────────────────┐
+│                     Node.js Backend                       │
+│                                                           │
+│  1. Burmese Script Analyzer & Chunking Engine             │
+│     • Splits long scripts by '။', '၊', paragraphs & stops │
+│     • Maximum ~350 characters per chunk                   │
+│                                                           │
+│  2. Neural Synthesis Ladder (Per Chunk)                   │
+│     ├── Priority 1: Gemini 2.0 Flash Audio API            │
+│     ├── Priority 2: Google Cloud TTS (my-MM-Standard-A/B) │
+│     └── Priority 3: Built-in High-Fidelity Acoustic Engine│
+│                                                           │
+│  3. PCM / WAV Merging & Concatenation                     │
+│     • Reassembles chunks with 60ms natural breathing gaps │
+│     • Generates a continuous 16-bit Mono WAV audio stream │
+└───────────────────────────────────────────────────────────┘
+                │
+                ▼
+[ Returns Base64 Audio + Durations + Metrics to Frontend Player ]
