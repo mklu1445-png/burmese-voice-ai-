@@ -1,7 +1,7 @@
 {
   "name": "burmese-voice-ai-app",
   "version": "1.0.0",
-  "description": "Production Progressive Web App (PWA) and Backend for Burmese Text-to-Speech AI Voice Over",
+  "description": "Production Progressive Web App",
   "main": "web/server.js",
   "scripts": {
     "start": "node web/server.js",
@@ -11,6 +11,6 @@
     "express": "^4.19.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5"
-  },
-  "e
   }
+}
+
